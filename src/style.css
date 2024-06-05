@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .weather-custom-image-gradient {
+    background-image: linear-gradient(to bottom, #509fcf, #060531);
+    background-size: cover;
+    background-position: center;
+  }
+  .namaz-custom-image-gradient {
+    background-image: linear-gradient(to bottom, #946c9f, #1e1d51),
+      url('../image/texture-wather.png');
+    background-size: cover;
+    background-position: center;
+  }
+  .sport-custom-image-gradient {
+    background: linear-gradient(
+      157deg,
+      rgba(214, 202, 6, 1) 4%,
+      rgba(40, 132, 0, 1) 27%
+    );
+  }
+}
+
+.weather {
+  @apply w-[140px] h-[213px] weather-custom-image-gradient  rounded;
+}
+.weather .texture-weather {
+  @apply text-white px-[14px] flex flex-col bg-[url('../image/texture-wather.png')] bg-cover h-full;
+}
+.weather .city {
+  @apply text-xl font-bold mt-1;
+}
+.weather .clarity {
+}
+.weather .temp {
+  @apply text-[38px] font-bold mt-[-10px];
+}
+.weather .weather-sembol {
+  @apply w-[78px] h-[60px] ml-6;
+}
+.weather .humidity-wind {
+  @apply flex flex-col mt-1 text-xs font-medium;
+}
+/* namaz */
+
+.namaz {
+  @apply text-white w-[140px] h-[213px] namaz-custom-image-gradient  rounded;
+}
+.namaz .texture-namaz {
+  @apply text-white flex flex-col bg-[url('../image/namaz.png')] bg-cover h-full w-full;
+}
+.namaz h2 {
+  @apply text-xl font-bold text-center mt-1;
+}
+.namaz .namaz-content {
+  @apply px-[14px];
+}
+.namaz .time {
+  @apply flex flex-col  text-center bg-[#00000080]  mt-2;
+  border-radius: 2px;
+}
+.namaz .remaining-time {
+  @apply text-xs;
+}
+.namaz .time-counter {
+  @apply font-bold text-lg;
+}
+.namaz .next-time {
+  @apply flex justify-between px-2 py-[6px] bg-[#0000004d]  mt-2;
+  border-radius: 2px;
+}
+.namaz .next-time .pray-time {
+  @apply text-xs font-medium;
+}
+.namaz .next-time .pray-counter {
+  @apply text-xs font-bold line-clamp-3;
+}
+.namaz .active-time {
+  background: radial-gradient(
+        circle at 100% 100%,
+        #0d0202 0,
+        #0d0202 3px,
+        transparent 3px
+      )
+      0% 0%/5px 5px no-repeat,
+    radial-gradient(circle at 0 100%, #0d0202 0, #0d0202 3px, transparent 3px)
+      100% 0%/5px 5px no-repeat,
+    radial-gradient(circle at 100% 0, #0d0202 0, #0d0202 3px, transparent 3px)
+      0% 100%/5px 5px no-repeat,
+    radial-gradient(circle at 0 0, #0d0202 0, #0d0202 3px, transparent 3px) 100%
+      100%/5px 5px no-repeat,
+    linear-gradient(#0d0202, #0d0202) 50% 50% / calc(100% - 4px)
+      calc(100% - 10px) no-repeat,
+    linear-gradient(#0d0202, #0d0202) 50% 50% / calc(100% - 10px)
+      calc(100% - 4px) no-repeat,
+    linear-gradient(272deg, #ff1200 0%, #ffa200 100%);
+  border-radius: 2px;
+}
+/* spor */
+.sports {
+  @apply flex flex-col text-white w-[140px] h-[213px] sport-custom-image-gradient  rounded px-[14px];
+}
+.sports h2 {
+  @apply text-xl font-bold;
+}
+.sports .sports-title {
+  @apply text-xs font-normal;
+}
+.sports .teams-info {
+  @apply bg-[#00000080] p-2 mt-4;
+  border-radius: 3px;
+}
+.sports .teams-name {
+  @apply text-[13px] font-bold pl-2;
+}
+.sports .teams-name::before {
+  content: '';
+  background: url(../image/Vector.png);
+  background-repeat: no-repeat;
+  height: 18px;
+
+  width: 33px;
+  margin-top: 12px;
+  margin-left: -8px;
+  position: absolute;
+}
+.sports .sports-time {
+  @apply font-bold text-[15px];
+}
+.sports .sports-platform {
+  @apply text-[8px] font-medium ml-1;
+}
+.sports .fikstur {
+  @apply mt-2;
+}
+.sports .fikstur li {
+  @apply flex justify-between items-center text-[12px] font-medium  border-t border-[#ffffff29] mt-1;
+}
+.sports .fikstur li img {
+  @apply h-2;
+}
